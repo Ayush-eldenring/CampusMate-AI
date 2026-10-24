@@ -1,25 +1,60 @@
-# CampusMate AI – Prototype
+# CampusMate AI – Smart Campus Companion
 
-A local Flask web prototype with three demo modules:
-- Academic Rescue: extracts dates and action-related lines from pasted notices.
-- Campus Navigator: searchable sample campus locations (replace with verified campus data).
-- Lost & Found: create and search item reports stored in SQLite.
+**A student-focused web platform designed to make campus life easier.**
 
-## Run on Windows
-1. Install Python 3.10+ and VS Code.
-2. Extract this folder.
-3. Open the folder in VS Code.
-4. Open Terminal in VS Code and run:
-   ```powershell
-   python -m venv .venv
-   .venv\Scripts\Activate.ps1
-   pip install -r requirements.txt
-   python app.py
-   ```
-5. Open http://127.0.0.1:5000
+🌐 **Live Demo:** https://campusmate-ai-dfib.onrender.com/
 
-If PowerShell blocks activation, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` in that terminal, then activate again.
+💻 **Source Code:** https://github.com/Ayush-eldenring/CampusMate-AI
 
-## Demo notes
-Use sample notices with dates such as `25/10/2026` or `25 October 2026`.
-This is a prototype: notice extraction uses simple pattern matching, not a real language model. Campus locations are sample entries and must be replaced with accurate campus information before presenting as real.
+## Features
+
+- **Academic Rescue:** Extracts important dates and action-related information from pasted academic notices.
+- **Campus Navigator:** Search sample campus locations.
+- **Lost & Found:** Create and search reports for lost and found belongings.
+- **Task Tracker:** Save and manage personal academic tasks.
+
+## Technologies Used
+
+- Python
+- Flask
+- HTML
+- CSS
+- JavaScript
+- SQLite
+
+## How to Use
+
+1. Open the [CampusMate AI website](https://campusmate-ai-dfib.onrender.com/).
+2. Explore the available modules.
+3. Try the notice analyzer, campus search, task tracker, and Lost & Found.
+
+## Run Locally (Optional)
+
+Requirements: Python 3.10+
+
+1. Download or clone this repository.
+2. Open the project folder in VS Code.
+3. Open the terminal and run these commands separately:
+
+```bash
+python -m venv .venv
+```
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+python app.py
+```
+
+4. Open http://127.0.0.1:5000 in your browser.
+
+## Project Status
+
+Functional prototype developed for YUKTHI 2026 – AI & Automation Track.
+
