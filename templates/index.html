@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusMate AI | Student Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">C</div><div><b>CampusMate</b><small>STUDENT COMPANION</small></div></div>
+    <div class="side-label">WORKSPACE</div>
+    <button class="nav active" data-page="home"><span>⌂</span> Overview</button>
+    <button class="nav" data-page="academic"><span>✦</span> Academic Rescue</button>
+    <button class="nav" data-page="navigator"><span>⌖</span> Campus Navigator</button>
+    <button class="nav" data-page="lost"><span>◇</span> Lost & Found</button>
+    <div class="sidebar-bottom"><div class="avatar">CM</div><div><b>Student workspace</b><small>Prototype mode</small></div></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">YOUR CAMPUS, SIMPLIFIED</span><h1 id="page-title">Good morning 👋</h1></div><div class="top-right"><span class="status-dot"></span> Prototype online</div></header>
+
+    <section class="page active" id="home">
+      <div class="hero">
+        <div><span class="pill">✦ YOUR CAMPUS COMPANION</span><h2>Everything campus.<br><em>One simple place.</em></h2><p>Stay on top of academics, find your way around campus, and connect with your student community.</p><button class="primary" data-go="academic">Explore Academic Rescue <span>→</span></button></div>
+        <div class="hero-art"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="orb">C<span>✦</span></div><div class="float-card fc1">📚 <b>Learn smarter</b></div><div class="float-card fc2">📍 <b>Find your way</b></div><div class="float-card fc3">🤝 <b>Help each other</b></div></div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">QUICK ACCESS</span><h2>Your student toolkit</h2></div><span class="muted">Choose a service to get started</span></div>
+      <div class="feature-grid">
+        <button class="feature" data-go="academic"><div class="feature-icon purple">✦</div><h3>Academic Rescue</h3><p>Turn lengthy notices into clear action points and deadlines.</p><span class="feature-link">Analyze a notice →</span></button>
+        <button class="feature" data-go="navigator"><div class="feature-icon blue">⌖</div><h3>Campus Navigator</h3><p>Search key campus places without wandering around.</p><span class="feature-link">Find a place →</span></button>
+        <button class="feature" data-go="lost"><div class="feature-icon green">◇</div><h3>Lost & Found</h3><p>Post an item and search reports shared by students.</p><span class="feature-link">Open community board →</span></button>
+      </div>
+      <div class="bottom-note"><span>✦</span><div><b>Built around student life</b><p>CampusMate brings useful campus services together in one student-friendly hub.</p></div></div>
+    </section>
+
+    <section class="page" id="academic">
+      <div class="page-intro"><span class="eyebrow">ACADEMIC RESCUE</span><h2>Make notices easier to act on.</h2><p>Paste a college notice to identify dates and important action points.</p></div>
+      <div class="two-col">
+        <div class="panel"><label for="notice">COLLEGE NOTICE</label><textarea id="notice" placeholder="Paste your college notice here...&#10;&#10;Example: Students must submit the assignment by 25/10/2026. Hall tickets will be distributed on 24 October 2026."></textarea><button class="primary full" id="analyze">Analyze notice <span>→</span></button><div class="hint">Prototype extraction recognizes common date formats and academic keywords.</div></div>
+        <div class="panel result-panel"><div class="panel-title"><div><span class="eyebrow">YOUR ACTION PLAN</span><h3>Notice insights</h3></div><span class="spark">✦</span></div><div id="analysis-result" class="empty-state"><div class="empty-icon">✧</div><b>Your results will appear here</b><p>Paste a notice and select Analyze.</p></div></div>
+      </div>
+      <div class="panel tasks-panel"><div class="panel-title"><div><span class="eyebrow">PERSONAL TRACKER</span><h3>Saved tasks</h3></div><button class="text-btn" id="refresh-tasks">Refresh ↻</button></div><div id="tasks-list" class="task-list"><p class="muted">Loading tasks…</p></div></div>
+    </section>
+
+    <section class="page" id="navigator">
+      <div class="page-intro"><span class="eyebrow">CAMPUS NAVIGATOR</span><h2>Where do you need to go?</h2><p>Search common campus destinations and see what each place is used for.</p></div>
+      <div class="search-wrap"><span>⌕</span><input id="location-search" placeholder="Search library, labs, office..."></div>
+      <div id="locations-list" class="location-grid"></div>
+      <div class="hint warning">Demo data: replace these sample locations with verified locations from your campus before judging.</div>
+    </section>
+
+    <section class="page" id="lost">
+      <div class="page-intro"><span class="eyebrow">STUDENT COMMUNITY</span><h2>Lost something? Found something?</h2><p>Share a report so other students can help reconnect items with their owners.</p></div>
+      <div class="two-col">
+        <div class="panel"><label>CREATE A REPORT</label><div class="form-grid"><input id="item" placeholder="Item name (e.g. blue water bottle)"><select id="report-status"><option>Lost</option><option>Found</option></select><input id="category" placeholder="Category (e.g. Stationery)"><input id="place" placeholder="Where was it lost/found?"><textarea id="details" placeholder="Extra details (optional)"></textarea><button class="primary full" id="post-report">Post report <span>→</span></button></div></div>
+        <div class="panel"><div class="panel-title"><div><span class="eyebrow">COMMUNITY BOARD</span><h3>Recent reports</h3></div></div><input id="report-search" class="search-input" placeholder="Search reports..."><div id="reports-list" class="report-list"></div></div>
+      </div>
+    </section>
+    <footer>CampusMate AI <span>•</span> Student-first campus experience <span class="footer-right">Prototype v1.0</span></footer>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
